@@ -805,7 +805,7 @@ class FtTrainer(Trainer):
             l2_dist_per_param = {}
 
             if self.model_starting_params is not None:
-                for n, p in model.module.named_parameters():
+                for n, p in model.named_parameters():
                     if n in self.trainable_params_names:
                         # Compute L2 distance between starting_params and current params
                         sp = self.model_starting_params[n].to(model.device)
